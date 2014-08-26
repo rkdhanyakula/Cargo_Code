@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en"  >
+   <head>
+  <!-- Bootstrap framework -->
+            <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" />
+        <!-- gebo blue theme-->
+            <link rel="stylesheet" href="css/blue.css" id="link_theme" />
+        <!-- breadcrumbs-->
+            <link rel="stylesheet" href="lib/jBreadcrumbs/css/BreadCrumb.css" />
+        <!-- tooltips-->
+            <link rel="stylesheet" href="lib/qtip2/jquery.qtip.min.css" />
+        <!-- notifications -->
+            <link rel="stylesheet" href="lib/sticky/sticky.css" />    
+        <!-- splashy icons -->
+            <link rel="stylesheet" href="img/splashy/splashy.css" />
+        <!-- wizard -->
+            <link rel="stylesheet" href="lib/stepy/css/jquery.stepy.css" />
+		<!-- colorbox -->
+            <link rel="stylesheet" href="lib/colorbox/colorbox.css" />	
+			
+        <!-- main styles -->
+            <link rel="stylesheet" href="css/style.css" />
+            
+            <link rel="stylesheet" href="css/responsive-tables.css" />
+			
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans" />
+	
+        <!-- Favicon -->
+            <link rel="shortcut icon" href="favicon.ico" />
+            			
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/ie.css" />
+            <script src="js/ie/html5.js"></script>
+			<script src="js/ie/respond.min.js"></script>
+        <![endif]-->
+        <style>
+		.inner-form-heading {
+		width: 99%;
+		min-height: 25px;
+		border-radius: 5px 5px 0 0;
+		padding: 7px 0 0 7px;
+		font-size: 14px;
+		margin-bottom: 10px;
+		background-image: linear-gradient(#3993ba,#067ead);
+		color: #fff;
+		height:auto;
+			}
+		.fieldset-custom {
+		  background: #f9f9f9;
+		  border: 1px solid #ccc;
+		  clear: left;
+		  padding: 5px 5px 5px 5px;
+		  -webkit-border-radius: 4px;
+		  -moz-border-radius: 4px;
+		  -ms-border-radius: 4px;
+		  border-radius: 4px;
+			}
+			p#simple_wizard-buttons-0, p#simple_wizard-buttons-1, p#simple_wizard-buttons-2,p#simple_wizard-buttons-3,p#simple_wizard-buttons-4 	{
+				display:none;}
+        </style>
+		
+		<script>
+			//* hide all elements & show preloader
+			document.documentElement.className += 'js';
+		</script>
+        <!-- Login and Register selection through radioscript -->
+        <script type="text/javascript">
+					function yesnoCheck() {
+						if (document.getElementById('yesCheck').checked) {
+							document.getElementById('login-trigger').style.display = 'block';
+							document.getElementById('register-trigger').style.display = 'none';
+							document.getElementById('continue-trigger').style.display = 'none';
+							
+						} else {
+							document.getElementById('login-trigger').style.display = 'none';
+							
+					 }
+					}
+					
+					function yesnoCheck2() {
+						if (document.getElementById('yesCheck2').checked) {
+							document.getElementById('register-trigger').style.display = 'block';
+							document.getElementById('login-trigger').style.display = 'none';
+							document.getElementById('continue-trigger').style.display = 'none';
+							
+						} else {
+							document.getElementById('register-trigger').style.display = 'none';
+							
+					 }
+					}
+					
+					function yesnoCheck3() {
+						if (document.getElementById('yesCheck3').checked) {
+							document.getElementById('continue-trigger').style.display = 'block';
+							document.getElementById('login-trigger').style.display = 'none';
+							document.getElementById('register-trigger').style.display = 'none';
+						} else {
+						 document.getElementById('continue-trigger').style.display = 'none';
+					 }
+					}
+
+		</script>
+        <!-- Login and Register selection through radio script -->
+        <!-- CC and paypal selection through radio button script -->
+        <script type="text/javascript">
+					function yesnoCc() {
+						if (document.getElementById('yesCc').checked) {
+							document.getElementById('cc-screen').style.display = 'block';
+							document.getElementById('paypal-screen').style.display = 'none';
+						} else {
+							document.getElementById('cc-screen').style.display = 'none';
+					 }
+					}
+					
+					function yesnoPaypal() {
+						if (document.getElementById('yesPaypal').checked) {
+							document.getElementById('paypal-screen').style.display = 'block';
+							document.getElementById('cc-screen').style.display = 'none';
+														
+						} else {
+							document.getElementById('paypal-screen').style.display = 'none';
+							
+					 }
+					}
+					
+					
+
+		</script>
+                <!-- CC and paypal selection through radio button script -->
+    
+   </head>
+   <body  class="login_page full_width gebo-fixed" >
+      <div id="loading_layer" style="display:none"><img src="img/ajax_loader.gif" alt="" /></div>
+      <div id="maincontainer" class="clearfix">
+         <!-- header -->
+         <header>
+            <div class="navbar navbar-fixed-top">
+               <div class="navbar-inner">
+                  <div class="container-fluid">
+                     <a class="brand" href="index.html"><i class="icon-home icon-white"></i> FreightIQ</a>
+                     <ul class="nav user_menu pull-right">
+                        <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Login | Register <b class="caret"></b></a>
+                           <ul class="dropdown-menu">
+                              <li><a href="user_login.html">Login</a></li>
+                              <li><a href="user_register.html">Register New</a></li>
+                              <li><a href="#">Support</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                     <ul class="nav" id="mobile-nav">
+                        <li class="dropdown"> <a  class="dropdown-toggle" href="#"> Why Freight IQ</a> </li>
+                        <li class="dropdown"> <a  class="dropdown-toggle" href="booking.html" id="thelink" > Send </a> </li>
+                        <li class="dropdown"> <a  class="dropdown-toggle" href="#"> Track </a> </li>
+                        <li class="dropdown"> <a  class="dropdown-toggle" href="#"> Pricing </a> </li>
+                        <li class="dropdown"> <a  class="dropdown-toggle" href="#"> Education Centre </a> </li>
+                        <li class="dropdown"> <a  class="dropdown-toggle" href="#"> Contact Us </a> </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </header>
+         <!-- main content -->
+         <div id="contentwrapper">
+            <div class="main_content">
+         <!-- -->
+         
+        <div class="row-fluid">
+						<div class="span12">
+							<h3 class="heading">Make a Booking
+                            <span class="btn" style="float:right;">Support</span>
+                            <a data-toggle="modal" href="#pre-requisites"><span class="btn" style="float:right;">Pre-requisites</span></a>
+                            </h3>
+                            
+							<div class="row-fluid">
+								<div class="span3"></div>
+								<div class="span6" style="width:100%;margin-left: 0.564103%;">
+                                
+									<form id="simple_wizard" class="stepy-wizzard form-horizontal">
+                                    <fieldset title="Enter Consignment" class="fieldset-custom" >
+											<legend class="hide"></legend>
+                                            <div class="row-fluid">
+                                                
+                                                <div class="span6">
+                                                      <div class="inner-form-heading">Pickup From</div>
+                                                      <div class="formSep control-group" >
+                                                        <label for="location_type" class="control-label">Location Type :</label>
+                                                        <div class="controls">
+                                                            <select name="location_type" >
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="country" class="control-label">Country :</label>
+                                                        <div class="controls">
+                                                            <select name="country" >
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="state" class="control-label">State/Province :</label>
+                                                        <div class="controls">
+                                                            <select name="state" >
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                     <div class="formSep control-group" >
+                                                        <label for="post-code" class="control-label">Post Code :</label>
+                                                        <div class="controls">
+                                                            <input type="text" name="post-code"  />
+                                                        </div>
+                                                    </div>
+                                                     <div class="formSep control-group" >
+                                                        <label for="location" class="control-label">Location :</label>
+                                                        <div class="controls">
+                                                            <select name="location" >
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="earliest-pickup" class="control-label">Earliest Pickup :</label>
+                                                        <div class="controls">
+                                                           <input type="datetime-local" >
+                                                        </div>
+                                                    </div>
+                                                    
+                                               </div>
+                                                
+                        					  <div class="span6">
+                                                    <div class="inner-form-heading">Delivery To</div>
+                                                   
+                                                    <div class="formSep control-group" >
+                                                        <label for="location_type" class="control-label">Location Type :</label>
+                                                        <div class="controls">
+                                                            <select name="location_type" >
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="country" class="control-label">Country :</label>
+                                                        <div class="controls">
+                                                            <select name="country" >
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="state" class="control-label">State/Province :</label>
+                                                        <div class="controls">
+                                                            <select name="state" >
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="post-code" class="control-label">Post Code :</label>
+                                                        <div class="controls">
+                                                            <input type="text" name="post-code"  />
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="location" class="control-label">Location :</label>
+                                                        <div class="controls">
+                                                            <select name="location" >
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="location_type" class="control-label">Reason for Export :</label>
+                                                        <div class="controls">
+                                                            <select name="location_type" >
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="post-code" class="control-label"> Customs Value of Goods : </label>
+                                                        <div class="controls">
+                                                            <input type="text" name="post-code"  />
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="post-code" class="control-label">Description of Goods :</label>
+                                                        <div class="controls">
+                                                            <input type="text" name="post-code"  />
+                                                        </div>
+                                                    </div>
+                                                    <div class="formSep control-group" >
+                                                        <label for="country" class="control-label">Country of Manufacture :</label>
+                                                        <div class="controls">
+                                                            <select name="country" >
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                                                                     
+                                               </div>
+                    						
+                                           </div>
+                                           	
+                                            <div class="row-fluid" style="margin-top:0 !important;">
+                                            	<div class="span12">
+                                                    <div class="alert alert-info" style="margin-bottom:0 !important;">
+														 <img src="img/gCons/van.png" alt="" style="width:20px;height:20px;"/> 
+                                                         Please note that preferred earliest pickup and delivery time is not guaranteed as 
+                                                         different service providers operate under different schedules.
+ 
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row-fluid">
+                                            	<div class="span12">
+                                                		<div class="inner-form-heading">Enter Details of Parcels to be Shipped</div>
+                                                            <div class="row-fluid" style="margin-top:0 !important;">
+                                                            <div class="span12">
+                                                                <div class="alert alert-info" style="margin-bottom:0 !important;height:20px;">
+                                                                     <label class="radio span6">
+                                                                        <input value="option1"  type="radio"  name="measure" >
+                                                                        Metric System [Centimeter (CM), Kilogram (KG)]
+
+                                                                    </label>
+                                                                    <label class="radio span6">
+                                                                        <input value="option2" type="radio"  name="measure" >
+                                                                        Imperial System [Inch (IN), Pound (LB)]
+ 
+                                                                    </label>
+                                                                      
+                                                                </div>
+                                                            </div>
+                                             		</div>
+                                                    
+                                                    <div class="row-fluid">
+                                            	<div class="span12">
+                                                		 <table class="table table-bordered table-striped" id="smpl_tbl" >
+                                                                <thead>
+                                                                    <tr>
+                                                                        
+                                                                        <th>Status</th>
+                                                                        <th>No</th>
+                                                                        <th>Pkg Type</th>
+                                                                        <th>No Of Pkgs</th>
+                                                                        <th>Contents</th>
+                                                                        <th>WT</th>
+                                                                        <th>L</th>
+                                                                        <th>W</th>
+                                                                        <th>H</th>
+                                                                        <th>Description</th>
+                                                                        <th>Item Type</th>
+                                                                        <th>UN Class</th>
+                                                                        <th>UN No</th>
+                                                                        <th>Remove</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        
+                                                                        <td><i class="splashy-check"></i></td>
+                                                                        <td>01</td>
+                                                                        <td>Envelope</td>
+                                                                        <td>02</td>
+                                                                        <td>Non-document</td>
+                                                                        <td>2</td>
+                                                                        <td>2</td>
+                                                                        <td>3</td>
+                                                                        <td>4</td>
+                                                                        <td>Simple description should be add here</td>
+                                                                        <td>Dangerous</td>
+                                                                        <td>Sample</td>
+                                                                        <td>Sample 1</td>
+                                                                        <td><i class="splashy-gem_remove"></i></td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                        
+                                                                        <td><i class="splashy-error_x"></i></td>
+                                                                        <td>01</td>
+                                                                        <td>Envelope</td>
+                                                                        <td>02</td>
+                                                                        <td>Non-document</td>
+                                                                        <td>2</td>
+                                                                        <td>2</td>
+                                                                        <td>3</td>
+                                                                        <td>4</td>
+                                                                        <td>Simple description should be add here</td>
+                                                                        <td>Dangerous</td>
+                                                                        <td>Sample</td>
+                                                                        <td>Sample 1</td>
+                                                                        <td><i class="splashy-gem_remove"></i></td>
+                                                                   </tr>
+                                                                 </tbody>
+                                                            </table>
+                                                            <div class="alert alert-info" >
+                                                            <span style="margin-right:20px;"><i class="splashy-check"></i> : Complete </span>
+                                                            <span style="margin-right:20px;"><i class="splashy-error_x"></i> : In-complete</span>
+                                                            <span style="margin-right:20px;"><i class="splashy-gem_remove"></i> : Remove</span>
+                                                            <span style="margin-right:20px;font-weight:bold;">WT : Weight</span>
+                                                            <span style="margin-right:20px;font-weight:bold;">L : Length</span>
+                                                            <span style="margin-right:20px;font-weight:bold;">W : Width</span>
+                                                            <span style="margin-right:20px;font-weight:bold;">H : Height</span>
+                                                            </div>
+                                                          	
+                                                          </div>
+                                            		</div>
+                                                        
+                                                            <div class="span2">
+                                                                <label>Packaging Type</label>
+                                                                <select name="country" class="span12">
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            	</select>
+                                                          	</div>
+                                                            
+                                                            <div class="span1">
+                                                                <label>Quantity</label>
+                                                                <input type="text" class="span10">
+                                                            </div>
+                                                            
+                                                            <div class="span1">
+                                                                <label>Length</label>
+                                                                <input type="text" class="span10">
+                                                             </div>
+                                                            
+                                                            <div class="span1">
+                                                                <label>Width</label>
+                                                                <input type="text" class="span10">
+                                                          	</div>
+                                                            
+                                                            <div class="span1">
+                                                                <label>Height</label>
+                                                                <input type="text" class="span10">
+                                                            </div>
+                                                            
+                                                            <div class="span1">
+                                                                <label>&nbsp; </label>
+                                                                <select name="country" class="span12">
+                                                                <option>CM</option>
+                                                                <option>Inch</option>
+                                                                <option>Feet</option>
+                                                                <option>M</option>
+                                                                </select>
+                                                            </div>
+                                                            
+                                                            <div class="span1">
+                                                                <label>Weight</label>
+                                                                <input type="text" class="span10">
+                                                            </div>
+                                                            
+                                                            <div class="span1">
+                                                                <label>&nbsp; </label>
+                                                                <select name="country" class="span12">
+                                                                <option>G</option>
+                                                                <option>Oz</option>
+                                                                <option>Kg</option>
+                                                                <option>Pnd</option>
+                                                                </select>
+                                                            </div>
+                                                            
+                                                            <div class="span2">
+                                                                <label>Item Type</label>
+                                                                <label class="checkbox">
+																<input type="checkbox" >
+                                                                    Dangerous
+                                                                </label>
+                                                                <label class="checkbox">
+																<input type="checkbox" >
+                                                                    Fragile
+                                                                </label>
+                                                          	</div>
+                                                            
+                                                            <div class="span2">
+                                                                <label>UN Class</label>
+                                                                <select name="country" class="span12">
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            	</select>
+                                                          	</div>
+                                                            
+                                                            <div class="span2">
+                                                                <label>UN Number</label>
+                                                                <select name="country" class="span12">
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            	</select>
+                                                            </div>
+
+                                                            <div class="span7">
+                                                            <label>Description</label>
+															<textarea name="txtarea_reg" id="txtarea_reg" cols="30" rows="1" class="span8"></textarea>
+                                                            </div>
+                                                            
+                                                     	</div>
+                                            		</div>
+
+                                             <div class="row-fluid" >
+                                                        <div class="span12">
+                                                            <div class="alert alert-info" >
+                                                                 <a href="#" class="btn btn-default btn-sm" ><i class="splashy-folder_stuffed_add"></i> Add another item</a>
+                                                            </div>
+                                                        
+                                                        	<div class="alert alert-info" >
+                                                                <ul class="list_a">
+                                                                <li> Exact dimensions and weight are necessary to ensure correct quotes. If this information is not accurate, 
+                                                                the delivery of the parcel maybe delayed. During pickup, the service provider will measure the weight of your parcels. 
+                                                                Any difference in weight, dimension and content of parcels during booking and pickup may result in change to the quotation. 
+                                                                The difference in cost will be charged via your selected method of payment without further reference to you before 
+                                                                the parcel's journey can commence.</li>
+                                                                
+                                                                </ul>
+                                                       		</div>
+                                                        </div>
+                                            </div>
+                                            
+                                             <div class="row-fluid" >
+                                                  <div class="span12">
+                                                   		 <label class="checkbox">
+                                                            <input value="option1"  type="checkbox">
+                                                            I agree to the <a data-toggle="modal" href="#t-and-c"><b>Terms &amp; Conditions</b></a>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input value="option2" type="checkbox">
+                                                           I confirm that my shipment does not contain  <b><a data-toggle="modal" href="#dangerous-goods">prohibited 
+                                                           and/or dangerous goods.</a></b> 
+                                                        </label>
+                                                 </div>
+                                            </div>
+                                            <div class="row-fluid" >
+                                                  <div class="span12">
+                                                   		 <button class="btn">Generate Quotes</button>
+                                                 </div>
+                                            </div>                 
+                                                    
+                                        	</fieldset>
+                                       		
+                                            <fieldset title="Select Service Provider" class="fieldset-custom">
+											<legend class="hide"></legend>
+                                            
+                                              <div class="row-fluid">
+                                            	<div class="span12">
+                                                		<div class="inner-form-heading">Select one quotation</div>
+                                                        <div class="alert alert-info" >If you wish to change the consignment details, please go back to enter 
+                                                        consignment page </div>
+                                                            <div class="span3" >
+                                                                <label>Filter by service provider</label>
+                                                                <select name="country" class="span12">
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            	</select>
+                                                          	</div>
+                                                            
+                                                            <div class="span3" >
+                                                                <label>Filter by service</label>
+                                                                <select name="country" class="span12">
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            	</select>
+                                                            </div>
+                                                            <div class="span3" >
+                                                                <label>Filter by delivery days</label>
+                                                                <select name="country" class="span12">
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            	</select>
+                                                            </div>
+                                                            <div class="span2" >
+                                                                <label>Sort by</label>
+                                                                <select name="country" class="span12">
+                                                                <option>Please Select</option>
+                                                                <option>Option1</option>
+                                                                <option>Option2</option>
+                                                                <option>Option3</option>
+                                                                <option>Option4</option>
+                                                                <option>Option5</option>
+                                                            	</select>
+                                                            </div>
+                                                          </div>
+                                            		</div>
+                                                    
+                                                    <div class="row-fluid">
+                                            	<div class="span12">
+                                                		<table class="table table-bordered table-striped" id="smpl_tbl" >
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Select</th>
+                                                                        <th>Service Provider</th>
+                                                                        <th>Service</th>
+                                                                        <th>Delivery Days</th>
+                                                                        <th>Price</th>
+                                                                        <th>Currency</th>
+                                                                   	</tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><input type="radio" name="optionsRadios"></td>
+                                                                        <td>DHL</td>
+                                                                        <td>Express9am</td>
+                                                                        <td>1-2 Days</td>
+                                                                        <td>02</td>
+                                                                        <td>MYR</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                        <td><input type="radio" name="optionsRadios" ></td>
+                                                                        <td>Post Malayisa</td>
+                                                                        <td>PosLaju</td>
+                                                                        <td>1 Day</td>
+                                                                        <td>29.00</td>
+                                                                        <td>MYR</td>
+                                                                   </tr>
+                                                                 </tbody>
+                                                            </table>
+                                                                                                                      	
+                                                          </div>
+                                            		</div>      
+										
+                                        	<div class="row-fluid" >
+                                                  <div class="span12">
+                                                   		 <button class="btn">Accept Quotes</button>
+                                                 </div>
+                                            </div> 	
+										</fieldset>
+                                        
+                                        <fieldset title="Enter Additional Details" class="fieldset-custom">
+											<legend class="hide"></legend>
+                                            <div class="row-fluid">
+                                            	<div class="span12">
+                                                		<div class="inner-form-heading">Please login to your account or register your details to complete the booking process</div>
+                                                </div>
+                                            </div>
+                                            <div class="row-fluid" >
+                                                  <div class="span12">
+                                                   		 <label class="radio">
+                                                            <input value="option1"  type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">
+                                                            I have an existing account with FreightIQ ( Sign-in to proceed )
+                                                        </label>
+                                                        <label class="radio">
+                                                            <input value="option2" type="radio" onclick="javascript:yesnoCheck2();" name="yesno" id="yesCheck2">
+                                                            I do not have an existing account with FreightIQ and wish to create a new one ( Create new account and proceed ) 
+                                                        </label>
+                                                        <label class="radio">
+                                                            <input value="option2" type="radio" onclick="javascript:yesnoCheck3();" name="yesno" id="yesCheck3">
+                                                            I do not have an existing account with FreightIQ and do not want to create a new one ( Proceed without an account ) 
+                                                        </label>
+                                                 </div>
+                                            </div>
+                                            <div class="row-fluid" id="login-trigger" style="display:none;">
+                                            	<div class="span12">
+                                                		<div class="inner-form-heading">Sign-in to an existing Freight IQ account</div>
+                                                        
+                                                           	<div id="login_form">
+                                                            <div class="alert alert-info alert-login">
+                                                                Enter username and password to sign-in.
+                                                            </div>
+                                                            <div class="cnt_b">
+                                                                <div class="formRow" style="margin-bottom: 10px;">
+                                                                    <div class="input-prepend">
+                                                                        <span class="add-on"><i class="icon-user"></i></span><input type="text" id="username" name="username" placeholder="Username"  />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="formRow" style="margin-bottom: 10px;">
+                                                                    <div class="input-prepend">
+                                                                        <span class="add-on"><i class="icon-lock"></i></span><input type="password" id="password" name="password" placeholder="Password"  />
+                                                                    </div>
+                                                                </div>
+                                                                <span class="linkform"><a href="#">Forgot password?</a></span>
+                                                              </div>
+                                                              
+                                                        </div>
+										      </div>
+                                            </div> 
+                                            
+                                            <div class="row-fluid" id="register-trigger" style="display:none;">
+                                            	<div class="span12">
+                                                		<div class="row-fluid">
+                                                            	<div class="inner-form-heading">Create a new account with Freight IQ</div>
+                                                                <div class="alert alert-info alert-login" style="margin: 0px 0 15px 0px;">
+                                                               Please fill the below fields to register. <b>(*)</b> Fields are manadatory
+                                                            </div>
+                                                
+                                                                <div class="span5">
+                                                                      
+                                                                      <div class="formSep control-group" >
+                                                                        <label for="location_type" class="control-label">Type of user:</label>
+                                                                        <div class="controls">
+                                                                            <label class="radio">
+                                                                            <input type="radio" name="tyepOfUser" >
+                                                                                Individual
+                                                                            </label>
+                                                                            <label class="radio" >
+                                                                            <input type="radio" name="tyepOfUser" >
+                                                                                Company
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Name :</label>
+                                                                        <div class="controls">
+                                                                            <input type="text" name="post-code"  />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Email Address :</label>
+                                                                        <div class="controls">
+                                                                            <input type="text" name="post-code"  />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Confirm Email Address :</label>
+                                                                        <div class="controls">
+                                                                            <input type="text" name="post-code"  />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Password :</label>
+                                                                        <div class="controls">
+                                                                            <input type="password" name="post-code"  />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Confirm Password :</label>
+                                                                        <div class="controls">
+                                                                            <input type="password" name="post-code"  />
+                                                                        </div>
+                                                                    </div>
+                                                               	</div>
+                                                
+                                                                <div class="span5">
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label"><u><b>Billing Address:</b></u></label>
+                                                                        <div class="controls">
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Address Line 1:</label>
+                                                                        <div class="controls">
+                                                                            <input type="text" name="post-code"  />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Address Line 2:</label>
+                                                                        <div class="controls">
+                                                                            <input type="text" name="post-code"  />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Address Line 3:</label>
+                                                                        <div class="controls">
+                                                                            <input type="text" name="post-code"  />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Country:</label>
+                                                                        <div class="controls">
+                                                                            <select name="country" >
+                                                                            <option>Please Select</option>
+                                                                            <option>Option1</option>
+                                                                            <option>Option2</option>
+                                                                            <option>Option3</option>
+                                                                            <option>Option4</option>
+                                                                            <option>Option5</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">State/Province:</label>
+                                                                        <div class="controls">
+                                                                            <select name="country" >
+                                                                            <option>Please Select</option>
+                                                                            <option>Option1</option>
+                                                                            <option>Option2</option>
+                                                                            <option>Option3</option>
+                                                                            <option>Option4</option>
+                                                                            <option>Option5</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">City:</label>
+                                                                        <div class="controls">
+                                                                            <select name="country" >
+                                                                            <option>Please Select</option>
+                                                                            <option>Option1</option>
+                                                                            <option>Option2</option>
+                                                                            <option>Option3</option>
+                                                                            <option>Option4</option>
+                                                                            <option>Option5</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Pincode:</label>
+                                                                        <div class="controls">
+                                                                            <select name="country" >
+                                                                            <option>Please Select</option>
+                                                                            <option>Option1</option>
+                                                                            <option>Option2</option>
+                                                                            <option>Option3</option>
+                                                                            <option>Option4</option>
+                                                                            <option>Option5</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                  </div>
+                                                         		</div>
+                                                        
+										      </div>
+                                            </div>
+                                            
+                                  <div class="row-fluid" id="continue-trigger" style="display:none;">
+                                      <div class="span12">
+                                          <div class="inner-form-heading">Please enter additional address information to complete the booking. 
+                                              If you do not have an email or phone , Enter your own details. </div>
+                                              <div class="row-fluid">
+                                                
+                                                <div class="span6">
+                                                      <div class="formSep control-group" >
+                                                          <label for="post-code" class="control-label"><u><b>Delivery to:</b></u></label>
+                                                          <div class="controls">
+                                                             
+                                                          </div>
+                                                      </div>
+                                                      <div class="formSep control-group" >
+                                                          <label for="post-code" class="control-label">Contact Name :</label>
+                                                          <div class="controls">
+                                                              <input type="text" name="post-code"  />
+                                                          </div>
+                                                      </div>
+                                                      <div class="formSep control-group" >
+                                                          <label for="post-code" class="control-label">Email Address :</label>
+                                                          <div class="controls">
+                                                              <input type="text" name="post-code"  />
+                                                          </div>
+                                                      </div>
+                                                      <div class="formSep control-group" >
+                                                          <label for="post-code" class="control-label">Phone Number :</label>
+                                                          <div class="controls">
+                                                              <input type="text" name="post-code"  />
+                                                          </div>
+                                                      </div>
+                                                     <div class="formSep control-group" >
+                                                          <label for="post-code" class="control-label">Address Line 1 :</label>
+                                                          <div class="controls">
+                                                              <input type="text" name="post-code"  />
+                                                          </div>
+                                                      </div>
+                                                     <div class="formSep control-group" >
+                                                          <label for="post-code" class="control-label">Address Line 2 :</label>
+                                                          <div class="controls">
+                                                              <input type="text" name="post-code"  />
+                                                          </div>
+                                                      </div>
+                                                     <div class="formSep control-group" >
+                                                          <label for="post-code" class="control-label">Address Line 3 :</label>
+                                                          <div class="controls">
+                                                              <input type="text" name="post-code"  />
+                                                          </div>
+                                                      </div>
+                                                      <div class="formSep control-group" >
+                                                          <label for="post-code" class="control-label">Location :</label>
+                                                          <div class="controls">
+                                                              <input type="text" name="post-code"  />
+                                                              <span class="help-block">
+                                                              <label class="checkbox">
+																<input type="checkbox">
+                                                                    Change Location
+                                                                </label>
+                                                              </span>
+                                                          </div>
+                                                      </div>
+                                                      <div class="formSep control-group" >
+                                                          <label for="post-code" class="control-label">Reference :</label>
+                                                          <div class="controls">
+                                                              <input type="text" name="post-code"  />
+                                                              <span class="help-block">
+                                                              <label class="checkbox">
+                                                                <input type="checkbox">
+                                                                    <b>Save this address for later use</b>
+                                                               </label>
+                                                      		</span>
+                                                          </div>
+                                                      </div>
+                                              </div>
+                                                
+                                               <div class="span6">
+                                                <div class="formSep control-group" >
+                                                    <label for="post-code" class="control-label"><u><b>Pickup From:</b></u></label>
+                                                    <div class="controls">
+                                                       
+                                                    </div>
+                                                </div>
+                                                <div class="formSep control-group" >
+                                                    <label for="post-code" class="control-label">Contact Name :</label>
+                                                    <div class="controls">
+                                                        <input type="text" name="post-code"  />
+                                                    </div>
+                                                </div>
+                                                <div class="formSep control-group" >
+                                                    <label for="post-code" class="control-label">Email Address :</label>
+                                                    <div class="controls">
+                                                        <input type="text" name="post-code"  />
+                                                    </div>
+                                                </div>
+                                                <div class="formSep control-group" >
+                                                    <label for="post-code" class="control-label">Phone Number :</label>
+                                                    <div class="controls">
+                                                        <input type="text" name="post-code"  />
+                                                    </div>
+                                                </div>
+                                               <div class="formSep control-group" >
+                                                    <label for="post-code" class="control-label">Address Line 1 :</label>
+                                                    <div class="controls">
+                                                        <input type="text" name="post-code"  />
+                                                    </div>
+                                                </div>
+                                               <div class="formSep control-group" >
+                                                    <label for="post-code" class="control-label">Address Line 2 :</label>
+                                                    <div class="controls">
+                                                        <input type="text" name="post-code"  />
+                                                    </div>
+                                                </div>
+                                               <div class="formSep control-group" >
+                                                    <label for="post-code" class="control-label">Address Line 3 :</label>
+                                                    <div class="controls">
+                                                        <input type="text" name="post-code"  />
+                                                    </div>
+                                                </div>
+                                                <div class="formSep control-group" >
+                                                    <label for="post-code" class="control-label">Location :</label>
+                                                    <div class="controls">
+                                                        <input type="text" name="post-code"  />
+                                                        <span class="help-block">
+                                                        <label class="checkbox">
+                                                          <input type="checkbox">
+                                                              Change Location
+                                                          </label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="formSep control-group" >
+                                                    <label for="post-code" class="control-label">Reference :</label>
+                                                    <div class="controls">
+                                                        <input type="text" name="post-code"  />
+                                                        <span class="help-block">
+                                                        <label class="checkbox">
+                                                          <input type="checkbox">
+                                                              <b>Save this address for later use</b>
+                                                         </label>
+                                                      </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                </div> 
+                                
+                                <div class="inner-form-heading">Summary</div>
+												<div class="span11">
+                                                
+                                                		<div class="row-fluid">
+                                                            <div class="span12" style="border-bottom:1px solid #e7e7e7;">
+                                                                <h5 >Consigner Information </h5>
+                                                                    <div class="span5">
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Name :</span><strong>Customer Name</strong></p>
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Email :</span><strong>customer@domain.com</strong></p>
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Phone :</span><strong>012345678</strong></p>
+                                                                    </div>
+                                                                    <div class="span5">
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Order ID :</span><strong>2326562</strong></p>
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Booked On :</span><strong>Tue,11 Feb 2014</strong></p>
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Tracking Ref No :</span><strong>563245</strong></p>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                		
+                                                        
+                                                        <div class="row-fluid">
+                                                        	<div class="span12" style="border-bottom:1px solid #e7e7e7;">
+                                                            <h5 >Pickup and Delivery Addresses </h5>
+                                                            <div class="span5">
+                                                                <p><strong class="muted">Pickup From</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Contact Name :</span><strong>Customer Name</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Email Address:</span><strong>customer@domain.com</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Phone Number:</span><strong>012345678</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Address:</span><strong><address>
+                                                                    <strong>Lorem Ipsum, Inc.</strong><br>
+                                                                    123 Lorem ipsum<br>
+                                                                    San Francisco, CA 12345<br>
+                                                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                                                </address></strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Location:</span><strong>Warehouse 3</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Reference:</span><strong>...</strong></p>
+                                                                
+                                                            </div>
+                                                            <div class="span5">
+                                                                <p><strong class="muted">Delivery To</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Contact Name :</span><strong>Customer Name</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Email Address:</span><strong>customer@domain.com</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Phone Number:</span><strong>012345678</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Address:</span><strong><address>
+                                                                    <strong>Lorem Ipsum, Inc.</strong><br>
+                                                                    123 Lorem ipsum<br>
+                                                                    San Francisco, CA 12345<br>
+                                                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                                                </address></strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Location:</span><strong>Warehouse 3</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Reference:</span><strong>...</strong></p>	
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="row-fluid">
+                                                            <div class="span12">
+                                                            	<table class="table table-bordered table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        
+                                                                        
+                                                                        <th>No</th>
+                                                                        <th>Pkg Type</th>
+                                                                        <th>Quantity</th>
+                                                                        <th>Contents</th>
+                                                                        <th>Wei-ght</th>
+                                                                        <th>Len-gth</th>
+                                                                        <th>Wid-th</th>
+                                                                        <th>Hei-ght</th>
+                                                                        <th>Description</th>
+                                                                        <th>Item Type</th>
+                                                                        <th>UN Class</th>
+                                                                        <th>UN No</th>
+                                                                        <th>$</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        
+                                                                        <td>01</td>
+                                                                        <td>Envelope</td>
+                                                                        <td>02</td>
+                                                                        <td>Non-document</td>
+                                                                        <td>2</td>
+                                                                        <td>2</td>
+                                                                        <td>3</td>
+                                                                        <td>4</td>
+                                                                        <td>Simple description should be add here</td>
+                                                                        <td>Dangerous</td>
+                                                                        <td>Sample</td>
+                                                                        <td>Sample 1</td>
+                                                                        <td>622.00</td>
+                                                                   </tr>
+                                                                   
+                                                                   <tr>
+                                                                        <td colspan="12">&nbsp;</td>
+                                                                        <td class="invoice_tar">
+                                                                            <p class="sepH_a"><span class="muted sepV_b">Subtotal</span>$622.00</p>
+                                                                            <p class="sepH_a"><span class="muted sepV_b">GST (10%)</span>$62.20</p>
+                                                                            <p class="sepH_a"><span class="muted sepV_b">Discount</span>0</p>
+                                                                            <p class="sepH_a text-success"><strong><span class="sepV_b">Total</span>$684.00</strong></p>
+                                                                        </td>
+                                                                    </tr>
+                                                                 </tbody>
+                                                            </table>
+                                                            
+                                                                
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        
+                                                </div>
+                                              
+                                
+                                			<div class="row-fluid" >
+                                                  <div class="span12">
+                                                   		 <button class="btn">Enter Consignment Details</button>
+                                                 </div>
+                                            </div>             
+                                            											
+										</fieldset>
+                                        <fieldset title="Select Payment Option" class="fieldset-custom">
+											<legend class="hide"></legend>
+                                            <div class="inner-form-heading">Select a payment option</div>
+                                            <div class="row-fluid" style="margin-top:0 !important;">
+                                            	<div class="span12">
+                                                    <div class="alert alert-info" style="margin-bottom:10px !important;">
+														 The payment method for a booking cannot be amended once the order has been submitted to FreightIQ.
+                                                         To choose an alternative payment method, you will need to cancel your existing booking and place 
+                                                         a new booking, with your preferred payment method. Please note that when cancelling credit card orders,
+                                                         it can take up to five (5) business days for the payment authorisation to be removed by your credit card company.
+                                                    </div>
+                                                </div>
+                                             </div>
+											<div class="row-fluid" >
+                                                  <div class="span12">
+                                                   		 <label class="radio">
+                                                            <input value="option1"  type="radio" onclick="javascript:yesnoCc();" name="payment" id="yesCc">
+                                                            Credit Card
+                                                        </label>
+                                                        <label class="radio">
+                                                            <input value="option2" type="radio" onclick="javascript:yesnoPaypal();" name="payment" id="yesPaypal">
+                                                            Paypal 
+                                                        </label>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="row-fluid" id="cc-screen" style="display:none;">
+                                                  <div class="span12">
+                                            		<div class="inner-form-heading">Enter payment information</div>
+											
+                                                   		<div class="span12">
+                                                                      
+                                                                      <div class="formSep control-group" >
+                                                                        <label for="location_type" class="control-label"><b><u>Credit card information :</u></b></label>
+                                                                        <div class="controls">
+                                                                        
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Card Type :</label>
+                                                                        <div class="controls">
+                                                                            <select name="country" >
+                                                                            <option>Please Select</option>
+                                                                            <option>Option1</option>
+                                                                            <option>Option2</option>
+                                                                            <option>Option3</option>
+                                                                            <option>Option4</option>
+                                                                            <option>Option5</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Card Number :</label>
+                                                                        <div class="controls">
+                                                                            <input type="text" name="post-code" style="width: 15%;" />
+                                                                            <input type="text" name="post-code" style="width: 15%;" />
+                                                                            <input type="text" name="post-code" style="width: 15%;" />
+                                                                            <input type="text" name="post-code" style="width: 15%;" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Card Security Number :</label>
+                                                                        <div class="controls">
+                                                                            <input type="text" name="post-code"  /><span style="padding-left:10px;"><a href="#">What is this ?</a></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Expiration Date :</label>
+                                                                        <div class="controls">
+                                                                            <select name="country" style="width:8%;">
+                                                                            <option>-MM-</option>
+                                                                            <option>Option1</option>
+                                                                            <option>Option2</option>
+                                                                            <option>Option3</option>
+                                                                            <option>Option4</option>
+                                                                            <option>Option5</option>
+                                                                            </select>
+                                                                            <select name="country" style="width:16%;" >
+                                                                            <option>-YYYY-</option>
+                                                                            <option>Option1</option>
+                                                                            <option>Option2</option>
+                                                                            <option>Option3</option>
+                                                                            <option>Option4</option>
+                                                                            <option>Option5</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Card Holders Name :</label>
+                                                                        <div class="controls">
+                                                                            <input type="text" name="post-code"  />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label">Charge Total :</label>
+                                                                        <div class="controls">
+                                                                            <input type="text" name="post-code" style="width:6%;"  /><span style="padding-left:5px;">MYR</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="formSep control-group" >
+                                                                        <label for="post-code" class="control-label"></label>
+                                                                        <div class="controls">
+                                                                        <a href=""class="btn">Proceed </a>
+
+                                                                        </div>
+                                                                    </div>
+                                                               	</div>
+                                              
+                                              <div class="row-fluid" style="margin-top:0 !important;">
+                                            	<div class="span12">
+                                                    <div class="alert alert-info" style="margin-bottom:10px !important;">
+														 Please note that in this step, your credit card will not be charged and hence the total balance owing 
+                                                         to your credit card issuer will not change. However, the total available credit available to you on 
+                                                         this card will be reduced by the Charge Total.  Only when pickup is completed, the Charge Total will
+                                                          be payable to the credit card issuer. If your booking contains multiple items and they ship at different
+                                                           times, you may see multiple charges on your credit card statement. If you cancel your order before it 
+                                                           has been billed, any authorisations placed on your credit card account can take up to 30 days to reverse, 
+                                                           depending on the credit card issuer.
+                                                    </div>
+                                                </div>
+                                             </div>      
+                                                        
+                                                 </div>
+                                            </div>
+                                            
+                                            <div class="row-fluid" id="paypal-screen" style="display:none;">
+                                                  <div class="span12">
+                                            		<div class="inner-form-heading">Connect to Paypal</div>
+														<div class="span12">
+                                                   		<a class="btn" class="row-fluid" style="margin-bottom:10px;" 
+                                                        href="https://www.paypal.com/uk/cgi-bin/webscr?cmd=_login-run" target="_blank">
+                                                        <b>Click Here to Connect Paypal</b></a>
+                                                        </div>
+                                                 </div>
+                                            </div>
+										
+                                        <div class="row-fluid" >
+                                                  <div class="span12">
+                                                   		 <button class="btn">Process Payment</button>
+                                                 </div>
+                                            </div> 	
+										</fieldset>
+                                        <fieldset title="Print Documents" class="fieldset-custom">
+											<legend class="hide"></legend>
+                                            <div class="inner-form-heading">Invoice</div>
+												<div class="span11">
+                                                		
+                                                        <div class="row-fluid">
+                                                            <div class="span12" style="border-bottom:1px solid #e7e7e7;">
+                                                                <h5 >Booking Status </h5>
+                                                                <p >Consignmnet Booking Status: This booking has been CONFIRMED and a copy has been emailed to you. 
+                                                                Thank you for booking with Freight IQ </p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="row-fluid">
+                                                            <div class="span12" style="border-bottom:1px solid #e7e7e7;">
+                                                                <h5 >Consigner Information </h5>
+                                                                    <div class="span5">
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Name :</span><strong>Customer Name</strong></p>
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Email :</span><strong>customer@domain.com</strong></p>
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Phone :</span><strong>012345678</strong></p>
+                                                                    </div>
+                                                                    <div class="span5">
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Order ID :</span><strong>2326562</strong></p>
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Booked On :</span><strong>Tue,11 Feb 2014</strong></p>
+                                                                        <p class="sepH_a"><span class="muted sepV_b">Tracking Ref No :</span><strong>563245</strong></p>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="row-fluid">
+                                                        	<div class="span12" style="border-bottom:1px solid #e7e7e7;">
+                                                            <h5 >Pickup and Delivery Addresses </h5>
+                                                            <div class="span5">
+                                                                <p><strong class="muted">Pickup From</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Contact Name :</span><strong>Customer Name</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Email Address:</span><strong>customer@domain.com</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Phone Number:</span><strong>012345678</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Address:</span><strong><address>
+                                                                    <strong>Lorem Ipsum, Inc.</strong><br>
+                                                                    123 Lorem ipsum<br>
+                                                                    San Francisco, CA 12345<br>
+                                                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                                                </address></strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Location:</span><strong>Warehouse 3</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Reference:</span><strong>...</strong></p>
+                                                                
+                                                            </div>
+                                                            <div class="span5">
+                                                                <p><strong class="muted">Delivery To</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Contact Name :</span><strong>Customer Name</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Email Address:</span><strong>customer@domain.com</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Phone Number:</span><strong>012345678</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Address:</span><strong><address>
+                                                                    <strong>Lorem Ipsum, Inc.</strong><br>
+                                                                    123 Lorem ipsum<br>
+                                                                    San Francisco, CA 12345<br>
+                                                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                                                </address></strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Location:</span><strong>Warehouse 3</strong></p>
+                                                                <p class="sepH_a"><span class="muted sepV_b">Reference:</span><strong>...</strong></p>	
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                         
+                                                        <div class="row-fluid">
+                                                            <div class="span12">
+                                                            	<table class="table table-bordered table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                       <th>No</th>
+                                                                        <th>Pkg Type</th>
+                                                                        <th>Quantity</th>
+                                                                        <th>Contents</th>
+                                                                        <th>WT</th>
+                                                                        <th>L</th>
+                                                                        <th>W</th>
+                                                                        <th>H</th>
+                                                                        <th>Description</th>
+                                                                        <th>Item Type</th>
+                                                                        <th>UN Class</th>
+                                                                        <th>UN No</th>
+                                                                        <th>$</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>01</td>
+                                                                        <td>Envelope</td>
+                                                                        <td>02</td>
+                                                                        <td>Non-document</td>
+                                                                        <td>2</td>
+                                                                        <td>2</td>
+                                                                        <td>3</td>
+                                                                        <td>4</td>
+                                                                        <td>Simple description should be add here</td>
+                                                                        <td>Dangerous</td>
+                                                                        <td>Sample</td>
+                                                                        <td>Sample 1</td>
+                                                                        <td>622.00</td>
+                                                                   </tr>
+                                                                   
+                                                                   <tr>
+                                                                        <td colspan="12">&nbsp;</td>
+                                                                        <td class="invoice_tar">
+                                                                            <p class="sepH_a"><span class="muted sepV_b">Subtotal</span>$622.00</p>
+                                                                            <p class="sepH_a"><span class="muted sepV_b">GST (10%)</span>$62.20</p>
+                                                                            <p class="sepH_a"><span class="muted sepV_b">Discount</span>0</p>
+                                                                            <p class="sepH_a text-success"><strong><span class="sepV_b">Total</span>$684.00</strong></p>
+                                                                        </td>
+                                                                    </tr>
+                                                                 </tbody>
+                                                            </table>
+                                                            
+                                                                
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="row-fluid">
+                                                            <div class="span12">
+                                                                <p class="sepH_a"><span class="label label-info">Terms and Conditions</span></p>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget consectetur ante. Nunc vitae nunc vel elit imperdiet bibendum. Curabitur sagittis lobortis nibh lacinia tincidunt. Quisque ac elit est. Vivamus tempor risus ut nisl molestie nec consectetur lorem gravida. Nullam aliquam, felis id suscipit scelerisque, arcu metus ornare nunc, vitae fringilla augue urna id nisi. Vivamus dignissim laoreet dictum. In urna nisi, sagittis eu malesuada ac, lobortis euismod felis.</p>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            <div class="row-fluid" >
+                                                  <div class="span12">
+                                                   		 <button class="btn">Print Documents</button>
+                                                         <button class="btn">Save Documents</button>
+                                                 </div>
+                                            </div> 
+                                                                        
+                                                                    </fieldset>
+                                                                    <button type="button" class="finish btn btn-primary">
+                                                                    <i class="icon-ok icon-white"></i> Print Documents</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                               </div>
+                   <!-- Pre-requisites Modal -->
+                   <div id="pre-requisites" class="modal hide fade" style="display:none">
+					<div class="modal-header">
+						<a class="close" data-dismiss="modal">X</a>
+						<h3>Pre-requisites</h3>
+					</div>
+					<div class="modal-body">
+						<p>
+							The freight FreightIQ parcel delivery service enables you to quickly  book parcel deliveries 
+                            with quotes and delivery options from over X available carriers in <b>5 simple steps</b>, paying when 
+                            you make the booking by credit/debit card or Paypal. <br/> <br/>  
+ 
+                            To complete shipments via this website you will need:
+                            <ul class="list_a">
+                            <li>To know the dimensions and weight the packages to be shipped </li>
+                            <li>PayPal or credit card account (for authorisation purposes only. Payment will only be deducted when the pickup is completed)</li>
+                            </ul>
+						</p>
+					</div>
+					<div class="modal-footer">
+						<a data-dismiss="modal" class="btn" href="#">Close</a>
+					</div>
+				</div> 
+        		 <!-- Pre-requisites Modal -->
+                 <!-- Dangerous Goods  Modal -->
+                   <div id="dangerous-goods" class="modal hide fade" style="display:none">
+					<div class="modal-header">
+						<a class="close" data-dismiss="modal">X</a>
+						<h3>Dangerous Goods</h3>
+					</div>
+					<div class="modal-body">
+						<p>
+                        <h3 class="heading">Dangerous Goods List </h3>
+                        <ul class="list_a">
+                            <li>Explosives</li>
+                            <li>Gases</li>
+                            <li>Flammable Liquids</li>
+                            <li>Flammable Solids</li>
+                            <li>Oxidizing Substances</li>
+                            <li>Toxic &amp; Infectious Substances</li>
+                            <li>Radioactive Material</li>
+                            <li>Corrosives</li>
+                            <li>Miscellaneous Dangerous Goods</li>
+    					</p>
+					</div>
+					<div class="modal-footer">
+						<a data-dismiss="modal" class="btn" href="#">Close</a>
+					</div>
+				</div> 
+        		 <!-- Dangerous Goods  Modal -->
+                 <!-- Terms and Conditions Modal -->
+                   <div id="t-and-c" class="modal hide fade" style="display:none">
+					<div class="modal-header">
+						<a class="close" data-dismiss="modal">X</a>
+						<h3>Terms &amp; Conditions</h3>
+					</div>
+					<div class="modal-body">
+						<p>
+                        <h3 class="heading"> Terms and Conditions </h3>
+                        <ul class="list_a">
+                            <li>Terms and Conditions 1</li>
+                            <li>Terms and Conditions 2</li>
+                            <li>Terms and Conditions 3</li>
+                           
+    					</p>
+					</div>
+					<div class="modal-footer">
+						<a data-dismiss="modal" class="btn" href="#">Close</a>
+					</div>
+				</div> 
+        		 <!-- Terms and Conditions Modal -->
+         <!-- -->      
+            </div>
+         </div>
+         <!-- footer -->
+         <!--<footer>
+            <div class="navbar navbar-fixed-bottom">
+                      <div class="navbar-inner">Footer </div>
+                    </div>
+            </footer>-->
+      		<script src="js/jquery.min.js"></script>
+			<!-- smart resize event -->
+			<script src="js/jquery.debouncedresize.min.js"></script>
+			<!-- hidden elements width/height -->
+			<script src="js/jquery.actual.min.js"></script>
+			<!-- js cookie plugin -->
+			<script src="js/jquery_cookie.min.js"></script>
+			<!-- main bootstrap js -->
+			<script src="bootstrap/js/bootstrap.min.js"></script>
+			<!-- tooltips -->
+			<script src="lib/qtip2/jquery.qtip.min.js"></script>
+			<!-- jBreadcrumbs -->
+			<script src="lib/jBreadcrumbs/js/jquery.jBreadCrumb.1.1.min.js"></script>
+			<!-- fix for ios orientation change -->
+			<script src="js/ios-orientationchange-fix.js"></script>
+			<!-- scrollbar -->
+			<script src="lib/antiscroll/antiscroll.js"></script>
+			<script src="lib/antiscroll/jquery-mousewheel.js"></script>
+			<!-- lightbox -->
+            <script src="lib/colorbox/jquery.colorbox.min.js"></script>
+			<!-- mobile nav -->
+			<script src="js/selectNav.js"></script>
+            <!-- common functions -->
+			<script src="js/gebo_common.js"></script>
+			
+			<!-- validation -->
+			<script src="lib/validation/jquery.validate.min.js"></script>
+			<!-- wizard -->
+			<script src="lib/stepy/js/jquery.stepy.min.js"></script>
+			<!-- wizard functions -->
+			<script src="js/gebo_wizard.js"></script>
+            <script src="js/responsive-tables.js"></script>
+            
+            
+			
+			<script>
+				$(document).ready(function() {
+					//* show all elements & remove preloader
+					setTimeout('$("html").removeClass("js")',1000);
+				});
+			</script> 
+        
+          <script>
+            $(document).ready(function(){
+                
+				//* boxes animation
+				form_wrapper = $('.login_box');
+				function boxHeight() {
+					form_wrapper.animate({ marginTop : ( - ( form_wrapper.height() / 2) - 24) },400);	
+				};
+				form_wrapper.css({ marginTop : ( - ( form_wrapper.height() / 2) - 24) });
+                $('.linkform a,.link_reg a').on('click',function(e){
+					var target	= $(this).attr('href'),
+						target_height = $(target).actual('height');
+					$(form_wrapper).css({
+						'height'		: form_wrapper.height()
+					});	
+					$(form_wrapper.find('form:visible')).fadeOut(400,function(){
+						form_wrapper.stop().animate({
+                            height	 : target_height,
+							marginTop: ( - (target_height/2) - 24)
+                        },500,function(){
+                            $(target).fadeIn(400);
+                            $('.links_btm .linkform').toggle();
+							$(form_wrapper).css({
+								'height'		: ''
+							});	
+                        });
+					});
+					e.preventDefault();
+				});
+				
+				//* validation
+				$('#login_form').validate({
+					onkeyup: false,
+					errorClass: 'error',
+					validClass: 'valid',
+					rules: {
+						username: { required: true, minlength: 3 },
+						password: { required: true, minlength: 3 }
+					},
+					highlight: function(element) {
+						$(element).closest('div').addClass("f_error");
+						setTimeout(function() {
+							boxHeight()
+						}, 200)
+					},
+					unhighlight: function(element) {
+						$(element).closest('div').removeClass("f_error");
+						setTimeout(function() {
+							boxHeight()
+						}, 200)
+					},
+					errorPlacement: function(error, element) {
+						$(element).closest('div').append(error);
+					}
+				});
+				
+            });
+        </script>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+
+function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('login-trigger').style.display = 'block';
+		document.getElementById('register-trigger').style.display = 'none';
+		
+    } else {
+        document.getElementById('login-trigger').style.display = 'none';
+		
+ }
+}
+
+function yesnoCheck2() {
+    if (document.getElementById('yesCheck2').checked) {
+        document.getElementById('register-trigger').style.display = 'block';
+		document.getElementById('login-trigger').style.display = 'none';
+		
+    } else {
+	    document.getElementById('register-trigger').style.display = 'none';
+		
+ }
+}
+
+function yesnoCheck3() {
+    if (document.getElementById('yesCheck3').checked) {
+        document.getElementById('continue-trigger').style.display = 'none';
+		document.getElementById('login-trigger').style.display = 'none';
+		document.getElementById('register-trigger').style.display = 'none';
+    } else {
+     document.getElementById('continue-trigger').style.display = 'none';
+ }
+}
+
+</script>
+</head>
+
+<body>
+<input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"/>Login
+<input type="radio" onclick="javascript:yesnoCheck2();" name="yesno" id="yesCheck2"/> Register
+<input type="radio" onclick="javascript:yesnoCheck3();" name="yesno" id="yesCheck3"/> Continue
+
+<br>
+<div id="login-trigger" style="display:none;">
+	1 If yes, explain:
+    
+</div>
+
+<div id="register-trigger" style="display:none;">
+	2 If yes, explain:
+    
+</div>
+
+<div id="continue-trigger" style="display:none;">
+	3 If yes, explain:
+    
+</div>
+   
+</body>
+</html>
